@@ -1,0 +1,15 @@
+html, body, header, p, button, main, div, h1, span, h2, section, h3, ul , li, footer {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    line-height: 150%;
+    border: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+ul {
+    list-style: none;
+}
+dialog {
+    padding: 0;
+}
