@@ -29,3 +29,96 @@ const countdown = () => {
 
 countdown();
 setInterval(countdown, 1000);
+
+const audioPlayer = document.getElementById('musicId');
+        const toggleButton = document.querySelector('.music-toggle-button');
+        
+        // Estado inicial (começa tocando devido ao 'autoplay' no HTML)
+        let isPlaying = true; 
+
+        // Função para alternar entre Tocar e Pausar
+        function togglePlayPause() {
+            if (isPlaying) {
+                // Se estiver tocando, pausa o áudio
+                audioPlayer.pause();
+                // toggleButton.textContent = 'Tocar Música'; // Muda o texto do botão
+                isPlaying = false;
+                console.log('Música pausada.');
+            } else {
+                // Se estiver pausado, toca o áudio
+                // O método play() só funciona se o arquivo for carregado corretamente
+                audioPlayer.play()
+                    .then(() => {
+                        // toggleButton.textContent = 'Pausar Música'; // Muda o texto do botão
+                        isPlaying = true;
+                        console.log('Música tocando.');
+                    })
+                    .catch(error => {
+                        // Trata o erro de autoplay bloqueado pelo navegador
+                        console.error('Erro ao tentar tocar o áudio. O navegador pode ter bloqueado o autoplay.', error);
+                        alert('O áudio foi bloqueado. Por favor, interaja com a página para tocar.');
+                        // Tenta definir o estado para 'pausado' para sincronizar o botão
+                        isPlaying = false;
+                        // toggleButton.textContent = 'Tocar Música';
+                    });
+            }
+        }
+
+        // Adiciona o listener de evento para o botão
+        toggleButton.addEventListener('click', togglePlayPause);
+        
+        // Opcional: Atualiza o texto do botão se o autoplay falhar
+        audioPlayer.addEventListener('pause', () => {
+             if (audioPlayer.currentTime > 0) { // Garante que não é o início
+                // toggleButton.textContent = 'Tocar Música';
+                isPlaying = false;
+             }
+        });
+        audioPlayer.addEventListener('play', () => {
+            //  toggleButton.textContent = 'Pausar Música';
+             isPlaying = true;
+        });
+
+
+//  let player;
+        
+//     function onYouTubeIframeAPIReady() {
+//         player = new YT.Player('musicId', {
+//             events: {
+//                 'onReady': onPlayerReady
+//             }
+//         });
+//     }
+
+//         function togglePlayPause() {
+//         if (!player) return; 
+
+//         if (player.getPlayerState() === YT.PlayerState.PLAYING) {
+//             player.pauseVideo();
+//             console.log('Vídeo pausado.');
+//         } else {
+//             player.playVideo();
+//             console.log('Vídeo tocando.');
+//         }
+//     }
+
+//     function onPlayerReady(event) {
+//         const toggleButton = document.querySelector('.music-toggle-button');
+
+//         event.target.mute(); // Muta o vídeo
+//         event.target.playVideo(); // Inicia a reprodução
+    
+//         // Opcional: Desmuta o vídeo na primeira interação do botão
+//         let isMuted = true;
+
+//         toggleButton.addEventListener('click', () => {
+//             if (isMuted) {
+//                 event.target.unMute(); // Desmuta na primeira interação
+//             isMuted = false;
+//         }
+//         togglePlayPause();
+//     }
+//   )}
+
+
+
