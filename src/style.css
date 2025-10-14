@@ -9,6 +9,18 @@
     --blue-cyan: #00BFFF;
   }
 
+
+.musicOrNot{
+    position: fixed;
+    width: 100vw;
+    min-height: 100vh;
+
+    top: 0;
+    left: 0;
+
+    background-color: var(--blue-dark) ;
+}
+
 body {
     min-height: 200vh;
     font-family: 'Roboto', sans-serif;
@@ -160,6 +172,30 @@ h2 {
     bottom: 0;
     transform: scaleX(-1) scaleY(-1)
 }
+
+.musicOrNot .container-frame{
+    width: 100%;;
+}
+
+
+.musicOrNot .losango {
+    padding: 1rem 0 0 0;
+    width: 1rem;
+}
+
+.musicOrNot .TextoConvite {
+    padding: 1rem 0 1.5rem 0;
+}
+
+.musicOrNot .container-buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.musicOrNot .arco-container{
+    padding-bottom: 2rem;
+}
 /* countdown */
 
 .countdown {
@@ -277,18 +313,18 @@ h2 {
     text-align: center;
 }
 
-.card button{ 
+button{ 
     border-radius: 15px;
     padding: 15px;
     min-width: 10rem;
     background-color: #E6F0FA;
 }
 
-.card button:hover{ 
+button:hover{ 
     background-color: #adb5bd;
 }
 
-.card button:active {
+button:active {
     background-color: #003366;
     color: #4A90E2;
 }
@@ -299,7 +335,7 @@ h2 {
     right: 5px;
     bottom: 5px;
     border-radius: 30px;
-height: 60px;
+    height: 60px;
     padding: 15px;
     
     background-color: #E6F0FA;
