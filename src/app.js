@@ -32,7 +32,7 @@ setInterval(countdown, 1000);
 
 const audioPlayer = document.getElementById('musicId');
 const toggleButton = document.querySelector('.music-toggle-button');
-const displayButton = document.querySelector('.button-display')
+const displayButton = document.querySelectorAll('.button-display')
 const displayButtonPlay = document.querySelector('.play')
 const displayMusic = document.querySelector('.musicOrNot')
         
@@ -45,7 +45,8 @@ const displayMusic = document.querySelector('.musicOrNot')
     displayMusic.style.display = 'none';
   }
 
-  displayButton.addEventListener('click', display );
+  displayButton[0].addEventListener('click', display );
+  displayButton[1].addEventListener('click', display );
 
   function togglePlayPause() {
       if (isPlaying) {
@@ -80,4 +81,5 @@ const displayMusic = document.querySelector('.musicOrNot')
   audioPlayer.addEventListener('play', () => {
       //  toggleButton.textContent = 'Pausar Música';
       isPlaying = true;
+
   });
