@@ -336,6 +336,8 @@ button:active {
     bottom: 5px;
     border-radius: 30px;
     height: 60px;
+    width: 60px;
+    min-width: 0px;
     padding: 15px;
     
     background-color: #E6F0FA;
@@ -480,5 +482,6 @@ header {
     -webkit-box-shadow: -9px -8px 38px -18px rgba(0,0,0,0.63) inset;
     -moz-box-shadow: -9px -8px 38px -18px rgba(0,0,0,0.63) inset;
 }
+
 
 }
