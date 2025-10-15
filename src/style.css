@@ -103,6 +103,7 @@ h2 {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    text-align: center;
 }
 
 .TextoIntro {
@@ -194,7 +195,7 @@ h2 {
 }
 
 .musicOrNot .arco-container{
-    padding-bottom: 2rem;
+    padding-bottom: 2.5rem;
 }
 /* countdown */
 
@@ -485,3 +486,4 @@ header {
 
 
 }
+
